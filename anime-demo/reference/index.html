@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll-Triggered Background Change</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      body {
+        font-family: sans-serif;
+        overflow-x: hidden;
+        background-color: #fdfaf0; /* 初始象牙白 */
+      }
+      section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="step1">
+      <ul>
+        <li>Step1</li>
+        <li>1111</li>
+      </ul>
+      <div
+        class="test"
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 630 630"
+      >
+        <span>222</span>
+      </div>
+    </section>
+    <section id="step2">STEP 2</section>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script>
+      
+      const [$test] = anime.utils.$(".test");
+
+      anime.animate(".test", {
+        scale: [
+          { to: 1.25, ease: "inOut(3)", duration: 200 },
+          { to: 1, ease: createSpring({ stiffness: 300 }) },
+        ],
+        loop: true,
+        loopDelay: 250,
+      });
+
+      const duration = 1000; // timeline 总时长
+
+      const tl = anime.timeline({
+        autoplay: false,
+        duration: duration,
+        easing: "linear",
+      });
+
+      // timeline 控制背景色从象牙白变为咖啡色
+      tl.add({
+        targets: document.body,
+        backgroundColor: "#4e342e",
+        duration: duration,
+      });
+
+      // 计算 scroll 进度并实时 seek timeline
+      function updateTimeline() {
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const progress = Math.min(Math.max(scrollTop / docHeight, 0), 1);
+        tl.seek(progress * duration);
+      }
+
+      window.addEventListener("scroll", updateTimeline);
+      window.addEventListener("resize", updateTimeline);
+      updateTimeline();
+    </script>
+  </body>
+</html>
