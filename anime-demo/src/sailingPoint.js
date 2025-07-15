@@ -1,17 +1,72 @@
 import "./style.css";
-import javascriptLogo from "./javascript.svg";
-import viteLogo from "/vite.svg";
-import { setupCounter } from "./counter.js";
-// import anime from '../node_modules/animejs/lib/anime.esm.js';
-// import  * as anime from '../node_modules/animejs/lib/anime.esm.js'
-// import { animate } from "animejs";
-// import anime from 'animejs';
-// import * as anime from 'animejs';
 
 const sections = document.querySelectorAll("section");
 
 let currentIdx = 0;
 let isScrolling = false;
+let slide0to1;
+
+const rollingBlocks = document.querySelectorAll(".rollingblocks");
+
+// init openning fn // shuffle the blocks if there is parameter
+function onInitOpening(rotatePoint = undefined) {
+  // random generated transform / scale
+
+  rollingBlocks.forEach((block) => {
+    let scaleRandom = Math.random() * (10 - 0.5) + 0.5;
+    let rotateRandom = Math.random() * 45;
+
+    block.style.transform = `scale(${scaleRandom}) rotate(${rotateRandom}deg) `;
+    const direction = Math.random() > 0.5 ? 1 : -1; // 正/反转
+    let speed;
+
+    if (scaleRandom < 2) {
+      speed = anime.random(6000, 12000);
+    } else if (scaleRandom < 5) {
+      speed = anime.random(20000, 24000);
+    } else if (scaleRandom < 7) {
+      speed = anime.random(45000, 48000);
+    } else if (scaleRandom < 9) {
+      speed = anime.random(80000, 86000);
+    } else {
+      speed = anime.random(140000, 160000);
+    }
+    
+    const anim = anime({
+      targets: block,
+      rotate: rotatePoint ?? `${direction > 0 ? "+=" : "-="}999999`,
+      duration: speed * 999, // 实现几乎无穷转动
+      easing: "linear",
+    });
+
+    block.anime = anim;
+    block.onmouseenter = () => block.anime.pause();
+    block.onmouseleave = () => block.anime.play();
+  });
+
+}
+
+// add pausing event listener to each block
+function addEventToOpenningBlocks() {
+  rollingBlocks.forEach((block) => {
+    block.addEventListener("mouseenter", pausing);
+    block.addEventListener("mouseleave", resuming);
+    block.addEventListener("click", shuffling);
+  });
+}
+
+function pausing(event) {
+  event.target.anime.pause();
+}
+
+function resuming(event) {
+  event.target.anime.play();
+}
+
+function shuffling(event) {
+  rollingBlocks.forEach(block => anime.remove(block));
+  onInitOpening();
+}
 
 // smooth scroll fn
 function scrollToSection(idx) {
@@ -35,8 +90,6 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-let slide0to1;
-
 function playScrollBlocksAnimation(prevIdx, currentIdx) {
   if (prevIdx == 0 && currentIdx == 1) {
     slide0to1 = anime({
@@ -51,12 +104,15 @@ function playScrollBlocksAnimation(prevIdx, currentIdx) {
         return anime.random(-360, 360);
       },
       duration: 1500,
-      autoplay: false
+      autoplay: false,
     });
-    slide0to1.play();
+    // slide0to1.play();
   } else {
-    console.log("aaaaaaaaaaaarrrrrrrrrghhhh")
-    slide0to1.direction ='reverse';
-    slide0to1.play();
+    // console.log("aaaaaaaaaaaarrrrrrrrrghhhh");
+    // slide0to1.direction = "reverse";
+    // slide0to1.play();
   }
 }
+
+onInitOpening();
+addEventToOpenningBlocks();
