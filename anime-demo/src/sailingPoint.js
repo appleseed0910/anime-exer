@@ -31,7 +31,7 @@ function onInitOpening(rotatePoint = undefined) {
     } else {
       speed = anime.random(140000, 160000);
     }
-    
+
     const anim = anime({
       targets: block,
       rotate: rotatePoint ?? `${direction > 0 ? "+=" : "-="}999999`,
@@ -43,7 +43,6 @@ function onInitOpening(rotatePoint = undefined) {
     block.onmouseenter = () => block.anime.pause();
     block.onmouseleave = () => block.anime.play();
   });
-
 }
 
 // add pausing event listener to each block
@@ -64,7 +63,7 @@ function resuming(event) {
 }
 
 function shuffling(event) {
-  rollingBlocks.forEach(block => anime.remove(block));
+  rollingBlocks.forEach((block) => anime.remove(block));
   onInitOpening();
 }
 
@@ -90,27 +89,34 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
+const anim0to1 = anime({
+  targets: ".blocks",
+  translateX: "3vw",
+  // scale: function () {
+  //   return anime.random(10, 30) / 10;
+  // },
+  duration: 1500,
+  direction: "forward",
+  autoplay: false,
+});
+
+function playAnime0to1(isBack = "") {
+  let direction = isBack ? "reverse" : "forward";
+
+  anim0to1.pause();
+  anim0to1.direction = direction;
+  isBack ? anim0to1.seek(anim0to1.duration) : anim0to1.seek(0);
+  anim0to1.play();
+}
+
 function playScrollBlocksAnimation(prevIdx, currentIdx) {
-  if (prevIdx == 0 && currentIdx == 1) {
-    slide0to1 = anime({
-      targets: ".blocks",
-      translateX: function () {
-        return anime.random(10, 11) + "vw";
-      },
-      scale: function () {
-        return anime.random(10, 30) / 10;
-      },
-      rotate: function () {
-        return anime.random(-360, 360);
-      },
-      duration: 1500,
-      autoplay: false,
-    });
-    // slide0to1.play();
-  } else {
-    // console.log("aaaaaaaaaaaarrrrrrrrrghhhh");
-    // slide0to1.direction = "reverse";
-    // slide0to1.play();
+  switch (`${prevIdx}-${currentIdx}`) {
+    case "0-1":
+      playAnime0to1();
+      break;
+    case "1-0":
+      playAnime0to1("back");
+      break;
   }
 }
 
