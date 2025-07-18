@@ -1,0 +1,201 @@
+feedback action items:
+
+1 AI priority sync
+2 New review 
+3 Bert's session - readability/现有代码优化方向
+4  Wuke TDD + Ai priority seesion
+5 提高自测
+
+
+
+OKR checkpoints
+
+O1 team dev efficiency
+
+KR 1 "Agreement" content && KR 2 Embedded in daily work
+
+	- transparency communication on JIRA / up-to-date status,dependency notice [Ongoing as expected]
+	- pre-review test / shorten the review meeting [Ongoing as expected]
+	- validate the actual working hours to log, ticket time, troubleshooting, spike [Ongoing as expected]
+
+	- limitation on personal hold story points [Need to re-assess]
+	- Withdraw tasks analysis / passing rate track[Not fulfilled/Need to re-assess]
+
+	- new review checking list, code owner, label pass[Ongoing as the coming week]
+	- stable meeting time , chunk time, face-to-face daily meeting[Ongoing as the coming week]
+
+	- TDD enhancement [Planned]
+
+****
+
+O2 Personal challenge
+
+KR 1 scrum events/ customized topics
+
+April  - Ranran 	- daily - feedback: daily is not effective
+May    - Zhengming 	- exercise
+June   - Jialiang 	- 2.6, 3.1 long review meetings and post review math;  
+				feedback: review changes in JIRA comment 
+July   - Zoubek   	- Refine meeting; feedback: 提高大家的参与度 
+Aug    - Chenhao 	- exercise
+
+KR 2 English gaming time
+
+April Retro - Exploding kittens board game
+May   Retro - Ice breking game - Park session
+June  Retro - Knowledge Quiz 
+July  Retro - XXX
+
+Planned todo: "measurement"
+
+****
+
+O3 AI project
+
+00 session [DONE, API ready, Dev environment ready]
+01 session [DONE, topics ready]
+
+02 session [Planned after new support]
+
+****
+
+O4
+
+KR 1&2 Customer feedback/Signavio session [0326, 0703 Quarterly Done]
+KR 3 customer ticket in new form [DONE] 
+	- Summary session , new idx and info chart [Planned]
+KR 4 New support release [Ongoing]
+
+======================================================================================================================================
+
+OKR adjustments
+
+O1 Team Dev efficiency 
+
+KR 1 propose dev Agreement - prepare - all agree
+KR 2 Apply agreement to dev flow 
+	start date/sprint
+	count all withdraw tasks, mark the effected task
+	passing rate track
+
+
+
+// 领新的task <3 如果有ongoing 的story
+
+// 次生bug 开新jira relates to original story
+// review check track not passing reason
+
+// transparency comment conversation on JIRA
+
+
+O2 Personal potential digging, cultivating
+
+KR 1 host scrum events 1/x 轮班制 plan // daily template 
+KR 2 English board game session monthly
+
+O3 AI flow
+
+O4 Customer feedback oriented Easier Getsupport
+
+KR 1 customer feedback session Qualtrics, Influence 	1/x
+KR 2 Signavio feedback session 				1/x
+KR 3 customer case in excel
+KR 4 new getsupport go live successfully
+
+
+
+O3 framework
+
+Q3 KR - exer - tasks -
+Q4 feedkack
+
+
+
+AI schedule 
+
+Q2 [April - June]
+
+[2.1, 2.2 by the end of April] 
+
+Session 0 - Setup py dev env, present the sample data pdf, Q&A
+	    [checklist: Make sure every one is able to commit] ?
+		API could be done, can the e-signature verification be done at the same time?
+	
+Session 1 - Keywords, Frequently Q&A brainstorming
+	    
+
+		//Assign to dev
+
+
+
+Q3 Midterm [July - August] 
+
+Session 2 - Review pdfs, get rid of duplicated content
+
+Session 3.. Front end start, new framework, what to have,
+
+
+======================================================================================================================================
+
+
+O1 Consensus
+
+- dependency transparency
+- not loading too much
+- comment notification
+- test before review
+- new jira to track new items
+
+- [review checklist/arch to view list] [code owner] [label pass]
+- validate the working hours in maximum
+
+
+1. list - bert/zoubek
+2. template - xinyi
+3. block owner - Xinyi
+4. label type on GitHub -Xinyi
+5. daily mention - review assign to XX
+
+TDD - 
+wuke session - story sample
+1. analysis - single page
+2. draft - wuke session
+
+
+Performance / Security / Accessiblity:
+1. security meeting hand out 
+
+
+August Session
+topic 00 framework design
+
+
+
+
+
+O2 Personal
+
+- ongoing
+- feedback collected
+- adjustment made
+
+
+O3 Project AI
+
+- 2 sessions (mechanics explaining / environment setup)
+- pending for now
+
+O3 Project Frontier
+
+O4 Feedback sessions
+
+- feedback session / signavio session
+
+
+
+
+
+
+
+
+

@@ -102,6 +102,8 @@ const anim0to1 = anime({
 
 function playAnime0to1(isBack = "") {
   let direction = isBack ? "reverse" : "forward";
+  
+  //
 
   anim0to1.pause();
   anim0to1.direction = direction;
