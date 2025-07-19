@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
@@ -104,6 +105,7 @@ body {
 
       .section-01-title {
         padding-bottom: 10rem;
+
         span {
           letter-spacing: 2rem;
           font-size: 8rem;
@@ -128,12 +130,128 @@ body {
     }
   }
 
+  section.objective-common-section {
+    padding: 12vh 10vw;
+
+    .objective-header {
+      .objective-header-text {
+        font-weight: bold;
+        font-size: 6rem;
+      }
+    }
+
+    .objective-carousel-container {
+      height: 90%;
+      padding-top: 5rem;
+
+      .kr-title-tab {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        width: 88%;
+        padding: 0.8rem;
+
+        .tab, .tab-01{
+          font-size: 3.6rem;
+          font-weight: 400;
+          color: rgba(53, 92, 125);
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          position: relative;
+          z-index: 1;
+
+          .kr-title-bold {
+            font-weight: bold;
+          }
+        }
+
+        .underline, .underline-01 {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 50%;
+          /* 两个tab就一半 */
+          height: 2px;
+          background: rgba(246, 114, 128, 0.8);
+          /* 你喜欢的糖梅色 */
+          transition: transform 0.3s ease;
+          z-index: 0;
+        }
+      }
+
+      .carousel-container {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .carousel, .carousel-01 {
+        display: flex;
+        transition: transform 1s ease;
+        width: 200%;
+        /* 两页内容 */
+      }
+
+      .carousel-item {
+        flex: 0 0 50%;
+        /* 每页占一半 */
+        padding: 1rem;
+
+        ul {
+          li {
+            list-style: square !important;
+            color: rgba(53, 92, 125);
+            padding: 1rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .objective-symbols-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px dashed rgba(53, 92, 125);
+    padding-top: 1rem;
+
+    span {
+      margin: 0.5rem 1rem;
+    }
+  }
+
+  .section-04 {
+    .regular-content-container {
+      height: 90%;
+    }
+  }
+
+  i {
+    font-size: 3.2rem !important;
+    padding: 0.6rem !important;
+  }
+
+  .done {
+    color: rgba(246, 114, 128, 0.8) !important;
+  }
+
+  .assess {
+    color: rgba(53, 92, 125, 0.8) !important;
+  }
+
+  .planned {
+    color: rgba(248, 177, 149, 0.8) !important;
+  }
+
+  .todo {
+    color: rgba(128, 154, 164, 0.8) !important;
+  }
+
   .blocks-layer {
     position: absolute;
     top: 57vh;
     left: 53vw;
     z-index: 2;
-    /* display: none; */
+    display: none;
 
     .blocks {
       height: 5rem;
@@ -147,10 +265,12 @@ body {
       /* background-color: (#f67280) */
       background-color: rgba(246, 114, 128, 0.8);
     }
+
     .block-k {
       /* background-color: #f8b195; */
       background-color: rgba(248, 177, 149, 0.8);
     }
+
     .block-r {
       background-color: rgba(53, 92, 125, 0.8);
     }

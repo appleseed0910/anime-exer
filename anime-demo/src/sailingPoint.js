@@ -102,7 +102,7 @@ const anim0to1 = anime({
 
 function playAnime0to1(isBack = "") {
   let direction = isBack ? "reverse" : "forward";
-  
+
   //
 
   anim0to1.pause();
@@ -121,6 +121,44 @@ function playScrollBlocksAnimation(prevIdx, currentIdx) {
       break;
   }
 }
+
+
+// section 02 carousel - tab
+const tabs = document.querySelectorAll(".tab");
+const underline = document.querySelector(".underline");
+const carousel = document.querySelector(".carousel");
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    // 1. 移动下划线
+    underline.style.transform = `translateX(${index * 100}%)`;
+
+    // // 2. 切换字体粗细
+    // tabs.forEach(t => t.classList.remove("active"));
+    // tab.classList.add("active");
+
+    // 3. 移动 carousel 内容
+    carousel.style.transform = `translateX(-${index * 50}%)`; // 一页宽度是 50%
+  });
+});
+
+const tabs01 = document.querySelectorAll(".tab-01");
+const underline01 = document.querySelector(".underline-01");
+const carousel01 = document.querySelector(".carousel-01");
+
+tabs01.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    // 1. 移动下划线
+    underline01.style.transform = `translateX(${index * 100}%)`;
+
+    // // 2. 切换字体粗细
+    // tabs.forEach(t => t.classList.remove("active"));
+    // tab.classList.add("active");
+
+    // 3. 移动 carousel 内容
+    carousel01.style.transform = `translateX(-${index * 50}%)`; // 一页宽度是 50%
+  });
+});
 
 onInitOpening();
 addEventToOpenningBlocks();
