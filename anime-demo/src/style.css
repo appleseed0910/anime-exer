@@ -151,7 +151,8 @@ body {
         width: 88%;
         padding: 0.8rem;
 
-        .tab, .tab-01{
+        .tab,
+        .tab-01 {
           font-size: 3.6rem;
           font-weight: 400;
           color: rgba(53, 92, 125);
@@ -165,7 +166,8 @@ body {
           }
         }
 
-        .underline, .underline-01 {
+        .underline,
+        .underline-01 {
           position: absolute;
           bottom: 0;
           left: 0;
@@ -184,7 +186,8 @@ body {
         width: 100%;
       }
 
-      .carousel, .carousel-01 {
+      .carousel,
+      .carousel-01 {
         display: flex;
         transition: transform 1s ease;
         width: 200%;
@@ -195,16 +198,34 @@ body {
         flex: 0 0 50%;
         /* 每页占一半 */
         padding: 1rem;
-
-        ul {
-          li {
-            list-style: square !important;
-            color: rgba(53, 92, 125);
-            padding: 1rem 0.5rem;
-          }
-        }
       }
     }
+  }
+
+  .section-06 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(53, 92, 125, 0.8) !important;
+    font-weight: bold;
+    font-size: 8rem;
+    letter-spacing: 10px;
+  }
+
+  ul {
+    li {
+      list-style: square !important;
+      color: rgba(53, 92, 125);
+      padding: 1rem 0.5rem;
+    }
+  }
+
+  .ai-ul {
+    margin: 1rem 0;
+  }
+
+  .ul-container {
+    padding-left: 14rem;
   }
 
   .objective-symbols-container {
@@ -219,10 +240,17 @@ body {
     }
   }
 
-  .section-04 {
-    .regular-content-container {
-      height: 90%;
-    }
+  .regular-content-container {
+    height: 90%;
+  }
+
+  div.section-krpoint {
+    margin: 4rem 2rem 0 2rem;
+  }
+
+  span.section-krpoint-bold {
+    font-weight: bold;
+    padding-right: 3rem;
   }
 
   i {
