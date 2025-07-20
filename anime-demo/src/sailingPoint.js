@@ -4,7 +4,6 @@ const sections = document.querySelectorAll("section");
 
 let currentIdx = 0;
 let isScrolling = false;
-let slide0to1;
 
 const rollingBlocks = document.querySelectorAll(".rollingblocks");
 
@@ -73,7 +72,8 @@ function scrollToSection(idx) {
 
   isScrolling = true;
   sections[idx].scrollIntoView({ behavior: "smooth" });
-  playScrollBlocksAnimation(currentIdx, idx);
+  // playScrollBlocksAnimation(currentIdx, idx);
+  goTo(currentIdx, idx);
   currentIdx = idx;
 
   setTimeout(() => (isScrolling = false), 800);
@@ -89,27 +89,41 @@ window.addEventListener("wheel", (e) => {
   }
 });
 
-const anim0to1 = anime({
-  targets: ".blocks",
-  translateX: "3vw",
-  // scale: function () {
-  //   return anime.random(10, 30) / 10;
-  // },
-  duration: 1500,
-  direction: "forward",
-  autoplay: false,
-});
+// const anim0to1 = anime({
+//   targets: ".blocks",
+//   translateX: "-53vw",
+//   translateY: "-14vh",
+//   duration: 1500,
+//   direction: "forward",
+//   easing: 'easeOutCubic',
+//   autoplay: false,
+// });
 
-function playAnime0to1(isBack = "") {
-  let direction = isBack ? "reverse" : "forward";
+// function playAnime0to1(isBack = "") {
+//   let direction = isBack ? "reverse" : "forward";
+//   anim0to1.pause();
+//   anim0to1.direction = direction;
+//   isBack ? anim0to1.seek(anim0to1.duration) : anim0to1.seek(0);
+//   anim0to1.play();
+// }
 
-  //
+// const anim1to2 = anime({
+//   targets: ".blocks",
+//   translateX: "-53vw",
+//   translateY: "10vh",
+//   duration: 1500,
+//   direction: "forward",
+//   easing: 'easeOutCubic',
+//   autoplay: false,
+// });
 
-  anim0to1.pause();
-  anim0to1.direction = direction;
-  isBack ? anim0to1.seek(anim0to1.duration) : anim0to1.seek(0);
-  anim0to1.play();
-}
+// function playAnime1to2(isBack = "") {
+//   let direction = isBack ? "reverse" : "forward";
+//   anim1to2.pause();
+//   anim1to2.direction = direction;
+//   isBack ? anim1to2.seek(anim1to2.duration) : anim1to2.seek(0);
+//   anim1to2.play();
+// }
 
 function playScrollBlocksAnimation(prevIdx, currentIdx) {
   switch (`${prevIdx}-${currentIdx}`) {
@@ -118,6 +132,12 @@ function playScrollBlocksAnimation(prevIdx, currentIdx) {
       break;
     case "1-0":
       playAnime0to1("back");
+      break;
+    case "1-2":
+      playAnime1to2();
+      break;
+    case "2-1":
+      playAnime1to2("back");
       break;
   }
 }
@@ -162,3 +182,149 @@ tabs01.forEach((tab, index) => {
 
 onInitOpening();
 addEventToOpenningBlocks();
+
+
+function createSlideAnimation({ fromX, toX, fromY, toY }) {
+  return anime({
+    targets: '.blocks',
+    translateX: [fromX, toX],
+    translateY: [fromY, toY],
+    easing: 'easeOutCubic',
+    duration: 1500,
+    autoplay: false
+  });
+}
+
+
+function play0to1(forward = true) {
+  anime({
+    targets: '.blocks',
+    translateX: ['0vw', '-53vw'],
+    translateY: ['0vh', '-14vh'],
+    rotate: '+=360',
+    scale: [1, .5, 1],
+    duration: 1500,
+    direction: forward ? 'normal' : 'reverse',
+    easing: 'easeOutCubic'
+  });
+}
+
+function play1to2(forward = true) {
+  anime({
+    targets: '.blocks',
+    translateY: ['-14vh', '-4vh'],
+    duration: 600,
+    direction: forward ? 'normal' : 'reverse',
+    easing: 'easeOutSine'
+  });
+}
+
+function play2to3(forward = true) {
+  anime({
+    targets: '.blocks',
+    translateY: ['-4vh', '6vh'],
+    duration: 600,
+    direction: forward ? 'normal' : 'reverse',
+    easing: 'easeOutSine'
+  });
+}
+
+function play3to4(forward = true) {
+  anime({
+    targets: '.blocks',
+    translateY: ['6vh', '16vh'],
+    duration: 600,
+    direction: forward ? 'normal' : 'reverse',
+    easing: 'easeOutSine'
+  });
+}
+
+function play4to5(forward = true) {
+  anime({
+    targets: '.blocks',
+    translateY: ['16vh', '26vh'],
+    duration: 600,
+    direction: forward ? 'normal' : 'reverse',
+    easing: 'easeOutSine'
+  });
+}
+
+function play5to6(forward = true) {
+  anime({
+    targets: '.blocks',
+    translateX: ['-53vw', '2vw'],
+    translateY: ['26vh', '-16vh'],
+    rotate: '+=360',
+    scale: [1, .5, 1],
+    duration: 1500,
+    direction: forward ? 'normal' : 'reverse',
+    easing: 'easeOutBack'
+  });
+}
+
+
+function goTo(currentIndex, index) {
+  switch (`${currentIdx}-${index}`) {
+    case "0-1":
+      play0to1(true);
+      break;
+    case "1-0":
+      play0to1(false)
+      break;
+    case "1-2":
+      play1to2(true);
+      break;
+    case "2-1":
+      play1to2(false);
+      break;
+    case "2-3":
+      play2to3(true);
+      break;
+    case "3-2":
+      play2to3(false);
+      break;
+    case "3-4":
+      play3to4(true);
+      break;
+    case "4-3":
+      play3to4(false);
+      break;
+    case "4-5":
+      play4to5(true);
+      break;
+    case "5-4":
+      play4to5(false);
+      break;
+    case "5-6":
+      play5to6(true);
+      break;
+    case "6-5":
+      play5to6(false);
+      break;
+  }
+
+  currentIndex = index;
+}
+
+// function playSlide(toIdx) {
+//   const goingForward = toIdx > currentIdx;
+
+//   // 简单例子：0 -> 1, 1 -> 0
+//   if (currentIdx === 0 && toIdx === 1) {
+//     slide0to1.direction = 'normal';
+//     slide0to1.play();
+//   } else if (currentIdx === 1 && toIdx === 0) {
+//     slide0to1.direction = 'reverse';
+//     slide0to1.play();
+//   }
+
+//   if (currentIdx === 1 && toIdx === 2) {
+//     slide1to2.direction = 'normal';
+//     slide1to2.play();
+//   } else if (currentIdx === 2 && toIdx === 1) {
+//     slide1to2.direction = 'reverse';
+//     slide1to2.play();
+//   }
+
+//   currentIdx = toIdx;
+// }

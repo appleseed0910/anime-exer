@@ -279,7 +279,7 @@ body {
     top: 57vh;
     left: 53vw;
     z-index: 2;
-    display: none;
+    /* display: none; */
 
     .blocks {
       height: 5rem;
@@ -287,6 +287,7 @@ body {
       margin: 2rem;
       margin-bottom: 2.5rem;
       mix-blend-mode: multiply;
+      /* transform-origin: center center; */
     }
 
     .block-o {
