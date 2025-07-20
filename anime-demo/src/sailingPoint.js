@@ -252,7 +252,7 @@ function play4to5(forward = true) {
 function play5to6(forward = true) {
   anime({
     targets: '.blocks',
-    translateX: ['-53vw', '2vw'],
+    translateX: ['-53vw', '3vw'],
     translateY: ['26vh', '-16vh'],
     rotate: '+=360',
     scale: [1, .5, 1],
