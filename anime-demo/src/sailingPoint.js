@@ -306,6 +306,81 @@ function goTo(currentIndex, index) {
   currentIndex = index;
 }
 
+const o1_jira = document.querySelector("#o1_jira");
+o1_jira.addEventListener("click", function() {
+  document.querySelector(".o1_jira").style.opacity = 1;
+  document.querySelector(".o1_track").style.opacity = 0;
+  document.querySelector(".o1_ux").style.opacity = 0;
+});
+
+
+const o1_track = document.querySelector("#o1_track");
+o1_track.addEventListener("click", function() {
+  document.querySelector(".o1_jira").style.opacity = 0;
+  document.querySelector(".o1_track").style.opacity = 1;
+  document.querySelector(".o1_ux").style.opacity = 0;
+});
+
+const o1_ux = document.querySelector("#o1_ux");
+o1_ux.addEventListener("click", function() {
+  document.querySelector(".o1_jira").style.opacity = 0;
+  document.querySelector(".o1_track").style.opacity = 0;
+  document.querySelector(".o1_ux").style.opacity = 1;
+});
+
+const o1_pr = document.querySelector("#o1_pr");
+o1_pr.addEventListener("click", function() {
+  document.querySelector(".o1_pr").style.opacity = 1;
+  document.querySelector(".o1_temp").style.opacity = 0;
+});
+
+const o1_temp = document.querySelector("#o1_temp");
+o1_temp.addEventListener("click", function() {
+  document.querySelector(".o1_temp").style.opacity = 1;
+  document.querySelector(".o1_pr").style.opacity = 0;
+});
+
+const o2_zm = document.querySelector("#o2_zm");
+o2_zm.addEventListener("click", function() {
+  document.querySelector(".o2_zm").style.opacity = 1;
+  document.querySelector(".o2_ch").style.opacity = 0;
+  document.querySelector(".o2_zx").style.opacity = 0;
+});
+
+const o2_ch = document.querySelector("#o2_ch");
+o2_ch.addEventListener("click", function() {
+  document.querySelector(".o2_ch").style.opacity = 1;
+  document.querySelector(".o2_zm").style.opacity = 0;
+  document.querySelector(".o2_zx").style.opacity = 0;
+});
+
+const o2_zx = document.querySelector("#o2_zx");
+o2_zx.addEventListener("click", function() {
+  document.querySelector(".o2_zx").style.opacity = 1;
+  document.querySelector(".o2_ch").style.opacity = 0;
+  document.querySelector(".o2_zm").style.opacity = 0;
+});
+
+
+const o2_park = document.querySelector("#o2_park");
+o2_park.addEventListener("click", function() {
+  document.querySelector(".o2_park").style.opacity = 1;
+  document.querySelector(".o2_debate").style.opacity = 0;
+});
+
+const o2_debate = document.querySelector("#o2_debate");
+o2_debate.addEventListener("click", function() {
+  document.querySelector(".o2_park").style.opacity = 0;
+  document.querySelector(".o2_debate").style.opacity = 1;
+});
+
+const o4_golive = document.querySelector("#o4_golive");
+o4_golive.addEventListener("click", function() {
+  document.querySelector(".o4_golive").style.opacity = 1;
+  document.querySelector("#hide").style.opacity = 1;
+});
+
+
 // function playSlide(toIdx) {
 //   const goingForward = toIdx > currentIdx;
 

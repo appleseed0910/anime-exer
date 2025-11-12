@@ -198,6 +198,85 @@ body {
         flex: 0 0 50%;
         /* 每页占一半 */
         padding: 1rem;
+
+        .carousel-inside-container {
+          display: flex;
+          height: 100%;
+          .carousel-vbox {
+            height: 100%;
+          }
+          .vbox-later {
+            position: relative;
+            height: 100%;
+            /* width: 16vw; */
+            /* height: 20vh; */
+
+            img {
+              transition: opacity 0.25s ease;
+              position: absolute;
+              transform-origin: center center;
+            }
+
+            .o1_jira {
+              opacity: 0;
+              padding: 4vh 0 0 5vw;
+            }
+
+            .o1_track {
+              opacity: 0;
+              padding: 4vh 0 0 5vw;
+            }
+
+            .o1_ux {
+              opacity: 0;
+              transform: scale(1.1);
+              padding: 5vh 0 0 6vw;
+            }
+
+            .o1_pr {
+              opacity: 0;
+              padding: 11vh 0 0 9vw;
+              height: 130%;
+              transform: scale(1.4);
+            }
+
+            .o1_temp {
+              opacity: 0;
+              transform: scale(1.5);
+              padding: 13vh 0 0 13vw;
+            }
+
+            .o2_zm {
+              padding: 1vh 0 0 5vw;
+              opacity: 0;
+            }
+
+            .o2_ch {
+              padding: 5vh 0 0 1vw;
+              opacity: 0;
+            }
+
+            .o2_zx {
+              opacity: 0;
+              padding: 4vh 0 0 5vw;
+              height: 95%;
+            }
+
+            .o2_park {
+              opacity: 0;
+              transform: scale(0.5);
+              transform-origin: left top;
+              padding: 5vh 0 0 5vw;
+            }
+
+            .o2_debate {
+              opacity: 0;
+              transform: scale(0.4);
+              transform-origin: left top;
+              padding: 10vh 0 0 5vw;
+            }
+          }
+        }
       }
     }
   }
@@ -262,6 +341,10 @@ body {
     color: rgba(246, 114, 128, 0.8) !important;
   }
 
+  .sap {
+    color: #0070f2 !important;
+  }
+
   .assess {
     color: rgba(53, 92, 125, 0.8) !important;
   }
@@ -305,3 +388,31 @@ body {
     }
   }
 }
+
+.carousel-inside-container {
+  display: flex;
+  height: 100%;
+    .carousel-vbox {
+        height: 100%;
+    }
+    .vbox-later {
+      position: relative;
+      height: 100%;
+    }
+    img {
+        transition: opacity 0.25s ease;
+        position: absolute;
+    }
+
+    .o4_golive {
+      opacity: 0;
+      padding: 20vh 0 0 10vw;
+      transform: scale(0.6);
+      transform-origin: left top;
+    }
+
+    #hide {
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+  }
