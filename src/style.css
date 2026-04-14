@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/* zoom: 0.33 已移除，改为直接把所有尺寸除以3 */
+
 html,
 body {
   margin: 0;
@@ -31,7 +33,7 @@ body {
     scroll-snap-align: start;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
+    font-size: 1.33rem;       /* 原 4rem */
     background-color: #f9f8f4;
   }
 
@@ -49,10 +51,10 @@ body {
       padding: 10vh 0 0 5vw;
 
       .rollingblocks {
-        height: 100px;
-        width: 100px;
+        height: 33px;          /* 原 100px */
+        width: 33px;           /* 原 100px */
         mix-blend-mode: multiply;
-        margin: 2rem;
+        margin: 0.67rem;       /* 原 2rem */
         transition: transform 0.3s linear;
       }
 
@@ -73,24 +75,24 @@ body {
     }
 
     .section-00-title-text {
-      margin-bottom: 5rem;
-      padding-top: 30rem;
+      margin-bottom: 1.67rem;  /* 原 5rem */
+      padding-top: 10rem;      /* 原 30rem */
       font-weight: bold;
-      letter-spacing: 1.8rem;
-      font-size: 7rem;
+      letter-spacing: 0.6rem;  /* 原 1.8rem */
+      font-size: 2.33rem;      /* 原 7rem */
     }
 
     .section-00-title-points {
       line-height: 1.5;
 
       span {
-        letter-spacing: 10px;
-        font-size: 3rem;
+        letter-spacing: 3.33px; /* 原 10px */
+        font-size: 1rem;        /* 原 3rem */
       }
 
       .span-cap {
         font-weight: bold;
-        font-size: 5rem;
+        font-size: 1.67rem;     /* 原 5rem */
       }
     }
   }
@@ -104,26 +106,26 @@ body {
       justify-content: center;
 
       .section-01-title {
-        padding-bottom: 10rem;
+        padding-bottom: 3.33rem; /* 原 10rem */
 
         span {
-          letter-spacing: 2rem;
-          font-size: 8rem;
+          letter-spacing: 0.67rem; /* 原 2rem */
+          font-size: 2.67rem;      /* 原 8rem */
           font-weight: bold;
         }
       }
 
       .section-01-points {
         .section-01-point {
-          padding-bottom: 2rem;
+          padding-bottom: 0.67rem; /* 原 2rem */
 
           span.span-cap {
             font-weight: bold;
-            font-size: 5rem !important;
+            font-size: 1.67rem !important; /* 原 5rem */
           }
 
           span {
-            font-size: 4rem;
+            font-size: 1.33rem;    /* 原 4rem */
           }
         }
       }
@@ -136,27 +138,27 @@ body {
     .objective-header {
       .objective-header-text {
         font-weight: bold;
-        font-size: 6rem;
+        font-size: 2rem;           /* 原 6rem */
       }
     }
 
     .objective-carousel-container {
       height: 90%;
-      padding-top: 5rem;
+      padding-top: 1.67rem;        /* 原 5rem */
 
       .kr-title-tab {
         position: relative;
         display: flex;
         justify-content: space-around;
         width: 88%;
-        padding: 0.8rem;
+        padding: 0.27rem;          /* 原 0.8rem */
 
         .tab,
         .tab-01 {
-          font-size: 3.6rem;
+          font-size: 1.2rem;       /* 原 3.6rem */
           font-weight: 400;
           color: rgba(53, 92, 125);
-          padding: 0.5rem 1rem;
+          padding: 0.17rem 0.33rem; /* 原 0.5rem 1rem */
           cursor: pointer;
           position: relative;
           z-index: 1;
@@ -172,10 +174,8 @@ body {
           bottom: 0;
           left: 0;
           width: 50%;
-          /* 两个tab就一半 */
           height: 2px;
           background: rgba(246, 114, 128, 0.8);
-          /* 你喜欢的糖梅色 */
           transition: transform 0.3s ease;
           z-index: 0;
         }
@@ -191,13 +191,11 @@ body {
         display: flex;
         transition: transform 1s ease;
         width: 200%;
-        /* 两页内容 */
       }
 
       .carousel-item {
         flex: 0 0 50%;
-        /* 每页占一半 */
-        padding: 1rem;
+        padding: 0.33rem;          /* 原 1rem */
 
         .carousel-inside-container {
           display: flex;
@@ -208,8 +206,6 @@ body {
           .vbox-later {
             position: relative;
             height: 100%;
-            /* width: 16vw; */
-            /* height: 20vh; */
 
             img {
               transition: opacity 0.25s ease;
@@ -287,24 +283,24 @@ body {
     align-items: center;
     color: rgba(53, 92, 125, 0.8) !important;
     font-weight: bold;
-    font-size: 8rem;
-    letter-spacing: 10px;
+    font-size: 2.67rem;            /* 原 8rem */
+    letter-spacing: 3.33px;        /* 原 10px */
   }
 
   ul {
     li {
       list-style: square !important;
       color: rgba(53, 92, 125);
-      padding: 1rem 0.5rem;
+      padding: 0.33rem 0.17rem;    /* 原 1rem 0.5rem */
     }
   }
 
   .ai-ul {
-    margin: 1rem 0;
+    margin: 0.33rem 0;             /* 原 1rem 0 */
   }
 
   .ul-container {
-    padding-left: 14rem;
+    padding-left: 4.67rem;         /* 原 14rem */
   }
 
   .objective-symbols-container {
@@ -312,10 +308,10 @@ body {
     flex-direction: row;
     justify-content: space-between;
     border-top: 1px dashed rgba(53, 92, 125);
-    padding-top: 1rem;
+    padding-top: 0.33rem;          /* 原 1rem */
 
     span {
-      margin: 0.5rem 1rem;
+      margin: 0.17rem 0.33rem;     /* 原 0.5rem 1rem */
     }
   }
 
@@ -324,17 +320,17 @@ body {
   }
 
   div.section-krpoint {
-    margin: 4rem 2rem 0 2rem;
+    margin: 1.33rem 0.67rem 0 0.67rem; /* 原 4rem 2rem 0 2rem */
   }
 
   span.section-krpoint-bold {
     font-weight: bold;
-    padding-right: 3rem;
+    padding-right: 1rem;           /* 原 3rem */
   }
 
   i {
-    font-size: 3.2rem !important;
-    padding: 0.6rem !important;
+    font-size: 1.07rem !important; /* 原 3.2rem */
+    padding: 0.2rem !important;    /* 原 0.6rem */
   }
 
   .done {
@@ -362,24 +358,20 @@ body {
     top: 57vh;
     left: 53vw;
     z-index: 2;
-    /* display: none; */
 
     .blocks {
-      height: 5rem;
-      width: 5rem;
-      margin: 2rem;
-      margin-bottom: 2.5rem;
+      height: 1.67rem;             /* 原 5rem */
+      width: 1.67rem;              /* 原 5rem */
+      margin: 0.67rem;             /* 原 2rem */
+      margin-bottom: 0.83rem;      /* 原 2.5rem */
       mix-blend-mode: multiply;
-      /* transform-origin: center center; */
     }
 
     .block-o {
-      /* background-color: (#f67280) */
       background-color: rgba(246, 114, 128, 0.8);
     }
 
     .block-k {
-      /* background-color: #f8b195; */
       background-color: rgba(248, 177, 149, 0.8);
     }
 
